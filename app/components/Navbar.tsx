@@ -62,15 +62,7 @@ export function Navbar() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex items-center space-x-4"
           >
-            <a href={`${APP_URL}/dashboard`}>
-              <Button
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold"
-              >
-                Login
-              </Button>
-            </a>
-            <a href={`${APP_URL}/booking`} className="hidden md:inline-flex">
+            <a href={`${APP_URL}/dashboard?tab=book`}>
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold btn-hover">
                 Book Now
               </Button>
@@ -107,7 +99,7 @@ export function Navbar() {
             <a href="#features" onClick={() => setIsMobileMenuOpen(false)} className="block text-foreground hover:text-primary transition-colors">Features</a>
             <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="block text-foreground hover:text-primary transition-colors">About</a>
             <Link href="/licensing" onClick={() => setIsMobileMenuOpen(false)} className="block text-foreground hover:text-primary transition-colors">Licensing</Link>
-            <a href={`${APP_URL}/booking`} className="block">
+            <a href={`${APP_URL}/dashboard?tab=book`} className="block">
               <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
                 Book Now
               </Button>

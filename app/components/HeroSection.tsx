@@ -66,7 +66,7 @@ export function HeroSection({ city, state }: HeroSectionProps) {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           >
-            <a href={`${APP_URL}/booking`}>
+            <a href={`${APP_URL}/dashboard?tab=book`}>
               <Button
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 text-lg btn-hover"

@@ -41,7 +41,7 @@ export function CTASection() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <a href={`${APP_URL}/booking`}>
+          <a href={`${APP_URL}/dashboard?tab=book`}>
             <Button
               size="lg"
               className="bg-background hover:bg-background/90 text-foreground font-semibold px-12 py-4 text-lg"

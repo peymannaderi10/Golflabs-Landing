@@ -34,15 +34,7 @@ export default function GettingStartedPage() {
               <span className="text-foreground">LABS</span>
             </Link>
             <div className="flex items-center gap-4">
-              <a href={`${APP_URL}/dashboard`}>
-                <Button
-                  variant="outline"
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold"
-                >
-                  Login
-                </Button>
-              </a>
-              <a href={`${APP_URL}/booking`} className="hidden md:inline-flex">
+              <a href={`${APP_URL}/dashboard?tab=book`}>
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
                   Book Now
                 </Button>
