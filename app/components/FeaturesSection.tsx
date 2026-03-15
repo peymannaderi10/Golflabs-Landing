@@ -1,96 +1,127 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, Shield, Users, Clock3 } from "lucide-react";
+import { Target, Shield, Monitor, Clock3, DollarSign, Users } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const features = [
   {
-    icon: Zap,
-    title: "Uneekor",
+    icon: <Target className="size-5" />,
+    title: "Ball & Club Tracking",
     description:
-      "Professional-grade launch monitors with unparalleled accuracy and ball tracking technology.",
+      "See your launch angle, spin rate, ball speed, carry distance, and club path after every shot. Know exactly what to fix.",
   },
   {
-    icon: Shield,
-    title: "Smart Lock Access",
+    icon: <Monitor className="size-5" />,
+    title: "50+ Courses on GameDay",
     description:
-      "Secure, automated bay access through our smart lock system. No staff required.",
+      "Pebble Beach, St Andrews, Bethpage Black — play them all on Uneekor's GameDay software.",
   },
   {
-    icon: Users,
-    title: "Uneekor GameDay",
+    icon: <Clock3 className="size-5" />,
+    title: "Open 24/7",
     description:
-      "Play on 50+ world-famous golf courses with stunning graphics and realistic physics.",
+      "6am before work. 11pm after the kids are asleep. Sunday morning. Christmas Day. We never close.",
   },
   {
-    icon: Clock3,
-    title: "24/7 Availability",
-    description: "Practice and play whenever it suits you. Our facility never closes.",
+    icon: <DollarSign className="size-5" />,
+    title: "No Membership",
+    description:
+      "Pay by the session. No monthly fees, no initiation costs, no commitments. Book 15 minutes or 4 hours.",
+  },
+  {
+    icon: <Users className="size-5" />,
+    title: "BYOB & Private",
+    description:
+      "Your own room with a couch, a fridge for your drinks, and clubs in the bay. Bring friends — up to 4 people, same price.",
+  },
+  {
+    icon: <Shield className="size-5" />,
+    title: "Walk In, Start Playing",
+    description:
+      "You'll get an unlock link before your booking. Tap it, walk in, and the simulator is ready. No waiting, no check-in.",
   },
 ];
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="features" className="py-16 md:py-24 overflow-hidden">
+      <div className="mx-auto max-w-5xl px-6 sm:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="max-w-2xl mb-12"
         >
-          <h2 className="text-4xl desk:text-5xl font-bold text-foreground mb-6">
-            STATE-OF-THE-ART <span className="text-primary">TECHNOLOGY</span>
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground">
+            Why GolfLabs.{" "}
+            <span className="text-muted-foreground">
+              We cut the overhead so you don't pay for it.
+            </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Experience the future of golf with our cutting-edge simulator technology and seamless
-            automation.
-          </p>
         </motion.div>
 
+        {/* Perspective bay image */}
         <motion.div
-          variants={{
-            animate: {
-              transition: { staggerChildren: 0.2 },
-            },
-          }}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid desk:grid-cols-2 lg:grid-cols-4 gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="relative -mx-4 rounded-3xl p-3 md:-mx-12 mb-12"
         >
+          <div className="[perspective:800px]">
+            <div className="[transform:skewY(-2deg)skewX(-2deg)rotateX(6deg)]">
+              <div className="aspect-[88/36] relative">
+                <img
+                  src="/images/bookingPage.png"
+                  className="absolute inset-0 z-10 w-full h-full object-cover object-top rounded-2xl shadow-2xl"
+                  alt="GolfLabs online booking platform showing available golf simulator time slots"
+                  width={2797}
+                  height={1137}
+                />
+                <div className="absolute -inset-[4.25rem] z-20 bg-[radial-gradient(ellipse_at_center,transparent_30%,var(--color-background)_75%)] pointer-events-none" />
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Feature grid — same pattern as business FeaturesSectionWithHoverEffects */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              variants={{
-                initial: { opacity: 0, y: 30 },
-                animate: {
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 0.6,
-                    delay: 0.2 + index * 0.2,
-                  },
-                },
-              }}
-              whileHover={{ y: -10, scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              className="bg-card p-8 rounded-lg border border-border hover:border-primary/50 transition-all duration-300 shadow-[0_0_20px_rgba(0,163,108,0.3)] hover:shadow-[0_0_40px_rgba(0,163,108,0.5)]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
+              viewport={{ once: true }}
+              className={cn(
+                "flex flex-col lg:border-r py-10 relative group/feature border-border",
+                (index === 0 || index === 3) && "lg:border-l",
+                index < 3 && "lg:border-b",
+                "border-b"
+              )}
             >
-              <div className="flex items-center gap-4 mb-4">
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"
-                >
-                  <feature.icon className="w-7 h-7 text-primary" />
-                </motion.div>
-                <h3 className="text-xl font-bold text-card-foreground">{feature.title}</h3>
+              {index < 3 ? (
+                <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-muted to-transparent pointer-events-none" />
+              ) : (
+                <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-muted to-transparent pointer-events-none" />
+              )}
+              <div className="mb-4 relative z-10 px-8 text-muted-foreground">
+                {feature.icon}
               </div>
-              <p className="text-muted-foreground">{feature.description}</p>
+              <div className="text-lg font-semibold mb-2 relative z-10 px-8">
+                <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-border group-hover/feature:bg-primary transition-all duration-200 origin-center" />
+                <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-foreground">
+                  {feature.title}
+                </span>
+              </div>
+              <p className="text-sm text-muted-foreground max-w-xs relative z-10 px-8">
+                {feature.description}
+              </p>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

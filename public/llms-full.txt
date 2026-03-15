@@ -1,0 +1,143 @@
+# GolfLabs — Full Context
+
+> 24/7 self-service golf simulator in Southampton, NJ. No membership required. $25–$35/hr.
+
+## Company Overview
+
+GolfLabs is a 1-bay golf simulator facility located at 133 Eayrestown Rd, Southampton, NJ 08088. It was founded by Peyman (software engineer, moved from Canada) and Phil (operations, local banker). They built GolfLabs because every golf simulator in New Jersey charged $60–75/hr with monthly memberships. Peyman built the entire software platform from scratch — booking, payments, smart lock integration, kiosk app — eliminating monthly software costs that other facilities pass on to customers.
+
+## What Makes GolfLabs Different
+
+1. **Price**: $25–35/hr vs $60–75/hr at competitors
+2. **No Membership**: Pay per session, no monthly fees, no initiation
+3. **24/7 Access**: Open around the clock, every day of the year
+4. **Self-Service**: No staff, fully automated via smart lock and kiosk
+5. **15-Minute Minimum**: Book as little as 15 minutes ($6.25–$8.75)
+6. **BYOB**: Bring your own drinks, fridge provided
+7. **Custom Software**: All technology built in-house, zero monthly software fees
+
+## Pricing
+
+| Time Period | Rate | Hours |
+|-------------|------|-------|
+| Off-Peak | $25/hr | 2:00 AM – 9:00 AM |
+| Peak | $35/hr | 9:00 AM – 2:00 AM |
+
+- 15-minute minimum booking
+- No membership, no signup fees
+- Up to 4 people per session, same price
+- Payment via Stripe
+
+## Technology
+
+### Launch Monitor
+- **Uneekor EYE Mini SimKit** — overhead-mounted camera-based launch monitor
+- Ball tracking (no stickers needed): ball speed, launch angle, side angle, backspin, sidespin, total spin
+- Club tracking (reflective sticker required): club speed, club path, angle of attack, smash factor, face angle, dynamic loft
+- Reflective stickers provided in the bay — easy to apply and remove, no residue
+
+### Simulation Software
+- **Uneekor GameDay** — 50+ world-famous golf courses
+- Featured courses: Pebble Beach, St Andrews, Bethpage Black, Torrey Pines, TPC Sawgrass
+- Practice mode: driving range with full shot data and dispersion
+- Play mode: full 18-hole rounds, solo or multiplayer (up to 4)
+
+### Practice Software
+- **Uneekor View** — driving range with shot tracer, dispersion pattern, and full ball/club metrics on the projector
+
+## How Booking Works
+
+1. **Pick a day** — Open the booking page, choose a date (available up to 1 month ahead)
+2. **Pick a time** — Select start time and duration (15-min increments)
+3. **Checkout** — Pay securely via Stripe, confirmation email sent immediately
+4. **Play** — 15 minutes before your session, receive an unlock link via email. Tap to unlock the front door. Walk in, the kiosk unlocks automatically, pick Practice or Play.
+
+## Facility Details
+
+- **Bay count**: 1 private bay
+- **Capacity**: Up to 4 people per session
+- **Clubs**: Right-handed set provided (bring your own if preferred)
+- **Seating**: Couch in the bay
+- **Beverages**: BYOB, fridge available
+- **Parking**: Free, right outside
+- **Shoes**: Golf shoes or clean sneakers
+
+## Location & Contact
+
+- **Address**: 133 Eayrestown Rd, Southampton, NJ 08088
+- **Phone**: (856) 745-1025
+- **Email**: peyman@golflabs.us
+- **Landmark**: Near Pivotal Training gym, off Route 206
+- **Coordinates**: 39.9526, -74.7141
+
+## Service Area (by drive time)
+
+### Within 15 minutes
+Southampton, Mount Holly, Lumberton, Eastampton, Hainesport, Pemberton, Vincentown, Medford
+
+### 15–25 minutes
+Marlton, Moorestown, Burlington Township, Tabernacle, Shamong, Browns Mills, Bordentown, Willingboro, Cherry Hill, Evesham, Mount Laurel
+
+## Competitor Comparison
+
+| Feature | GolfLabs | Typical NJ Competitor |
+|---------|----------|----------------------|
+| Hourly Rate | $25–$35 | $60–$75 |
+| Membership Required | No | Usually yes for 24/7 |
+| Minimum Booking | 15 minutes | 1–2 hours |
+| Hours | 24/7/365 | Limited (usually 8am–10pm) |
+| Staff On-Site | No (self-service) | Yes (staffing costs passed to customer) |
+| BYOB | Yes | Rarely |
+| Technology | Uneekor EYE Mini | Often TrackMan (more expensive, similar data) |
+
+## Reviews
+
+- 11 five-star reviews on Google (as of March 2026)
+- Average rating: 5.0/5.0
+
+## Founders
+
+- **Peyman** — Co-Founder & Software. Software engineer who moved to NJ from London, Ontario, Canada. Built the entire GolfLabs platform (booking, payments, smart lock, kiosk) from scratch.
+- **Phil** — Co-Founder & Operations. Met Peyman as his banker. Handles facility operations and customer relationships.
+
+## Links
+
+- Website: https://golflabs.us
+- Book Now: https://app.golflabs.us/dashboard?tab=book
+- About: https://golflabs.us/about
+- FAQ: https://golflabs.us/faq
+- Getting Started: https://golflabs.us/getting-started
+- Instagram: https://instagram.com/golflabs.us
+- Google Business: https://share.google/w6oDRCrUYfnvphWea
+
+## FAQ
+
+**Do I need a membership to play?**
+No. There's no membership, no monthly fee, and no commitment. Just pick a time, pay for your session, and show up.
+
+**What are your hours?**
+24/7, 365 days a year.
+
+**What's the minimum booking time?**
+15 minutes. A quick practice session is $6.25–$8.75.
+
+**How does the smart lock work?**
+15 minutes before your booking, you get an email with an unlock button. Tap it, and the front door unlocks. No keys, no codes, no apps.
+
+**Can I bring friends?**
+Yes — up to 4 people per session. Same price whether it's just you or a group.
+
+**What should I bring?**
+We have right-handed clubs in the bay. Wear golf shoes or clean sneakers. It's BYOB — there's a fridge.
+
+**What courses can I play?**
+50+ world-famous courses through GameDay including Pebble Beach, St Andrews, and Bethpage Black.
+
+**Where are you located?**
+133 Eayrestown Rd, Southampton, NJ 08088. Free parking. Near Pivotal Training gym off Route 206.
+
+**What simulator technology do you use?**
+Uneekor EYE Mini SimKit with GameDay software. Tracks ball speed, launch angle, spin rate, carry distance, and more.
+
+**Is the facility staffed?**
+No, and that's by design. Fully self-service means no staffing costs, which keeps prices at $25–35/hr.

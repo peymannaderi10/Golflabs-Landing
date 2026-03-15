@@ -1,135 +1,107 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Clock3, Sun, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import type { PricingRule } from "@/lib/api";
 
 interface PricingSectionProps {
   pricingRules: PricingRule[];
 }
 
-const staggerContainer = {
-  animate: {
-    transition: { staggerChildren: 0.1 },
-  },
-};
+function formatTime(time: string): string {
+  const [h, m] = time.split(":").map(Number);
+  const hour = h % 12 === 0 ? 12 : h % 12;
+  const suffix = h < 12 ? "am" : "pm";
+  return m === 0 ? `${hour}${suffix}` : `${hour}:${m.toString().padStart(2, "0")}${suffix}`;
+}
 
-const scaleIn = {
-  initial: { opacity: 0, scale: 0.9 },
-  animate: { opacity: 1, scale: 1 },
-  transition: { duration: 0.5 },
-};
+const FALLBACK_TIERS = [
+  {
+    name: "Off-Peak",
+    price: 25,
+    hours: "2am – 9am",
+  },
+  {
+    name: "Peak",
+    price: 35,
+    hours: "9am – 2am",
+  },
+];
+
+const SHARED_FEATURES = [
+  "Private bay — up to 4 people",
+  "50+ courses on Uneekor GameDay",
+  "Clubs provided (right-handed)",
+  "BYOB welcome",
+  "15-minute minimum booking",
+];
 
 export function PricingSection({ pricingRules }: PricingSectionProps) {
-  const pricingTiers = pricingRules.map((rule, idx) => ({
-    name: rule.name,
-    price: rule.hourlyRate,
-    period: "per hour",
-    description:
-      rule.startTime && rule.endTime
-        ? `${rule.startTime.substring(0, 5)} - ${rule.endTime.substring(0, 5)}`
-        : "All hours",
-    features: [
-      "Full bay access",
-      "All courses available",
-      "Practice facilities",
-      "Smart lock access",
-    ],
-    highlight: idx === pricingRules.length - 1,
-    icon: idx === 0 ? Clock3 : Sun,
-  }));
-
-  if (pricingTiers.length === 0) return null;
+  const pricingTiers =
+    pricingRules.length > 0
+      ? pricingRules.map((rule) => ({
+          name: rule.name,
+          price: rule.hourlyRate,
+          hours:
+            rule.startTime && rule.endTime
+              ? `${formatTime(rule.startTime)} – ${formatTime(rule.endTime)}`
+              : "All hours",
+        }))
+      : FALLBACK_TIERS;
 
   return (
-    <section id="pricing" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="pricing" className="py-16 md:py-24">
+      <div className="mx-auto max-w-5xl px-6 sm:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="max-w-2xl"
         >
-          <h2 className="text-4xl desk:text-5xl font-bold mb-4 tracking-wide text-foreground">
-            Simple, Transparent <span className="text-primary">Pricing</span>
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground">
+            Simple pricing.{" "}
+            <span className="text-muted-foreground">
+              No membership. No hidden fees. Other indoor golf nearby charges $60–75/hr.
+            </span>
           </h2>
-          <p className="text-xl text-muted-foreground">Pay by the hour, no membership required.</p>
         </motion.div>
 
-        <motion.div
-          variants={staggerContainer}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          className="grid desk:grid-cols-2 gap-8 max-w-3xl mx-auto"
-        >
-          {pricingTiers.map((tier) => (
-            <motion.div
-              key={tier.name}
-              variants={scaleIn}
-              whileHover={{ y: -10, scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-              className="relative"
-            >
-              <Card
-                className={`h-full flex flex-col ${
-                  tier.highlight
-                    ? "border-primary bg-card shadow-xl"
-                    : "border-border bg-card shadow-lg"
-                } hover:shadow-2xl transition-shadow duration-300`}
+        <div className="mt-12 border border-border">
+          {/* Pricing tiers */}
+          <div className="flex flex-col md:flex-row">
+            {pricingTiers.map((tier, idx) => (
+              <div
+                key={tier.name}
+                className={`flex-1 px-6 py-8 md:py-12 xl:px-10 ${
+                  idx !== 0 ? "border-t border-border md:border-t-0 md:border-l md:border-border" : ""
+                }`}
               >
-                {tier.highlight && (
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.5, type: "spring" }}
-                    className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold"
-                  >
-                    POPULAR
-                  </motion.div>
-                )}
-                <CardHeader className="items-center text-center">
-                  <motion.div
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.5 }}
-                    className="p-3 bg-primary/10 rounded-full mb-3"
-                  >
-                    <tier.icon className="h-8 w-8 text-primary" />
-                  </motion.div>
-                  <CardTitle className="text-2xl font-bold text-card-foreground">
-                    {tier.name}
-                  </CardTitle>
-                  <CardDescription className="text-muted-foreground">
-                    {tier.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="flex flex-col flex-grow">
-                  <div className="mb-6 text-center">
-                    <span className="text-4xl font-bold text-primary">${tier.price}</span>
-                    <span className="text-muted-foreground ml-1">{tier.period}</span>
-                  </div>
-                  <ul className="space-y-3 mb-6 flex-grow">
-                    {tier.features.map((feature, featureIndex) => (
-                      <motion.li
-                        key={feature}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: featureIndex * 0.1 }}
-                        viewport={{ once: true }}
-                        className="flex items-start"
-                      >
-                        <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
-                        <span className="text-muted-foreground">{feature}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
+                <p className="text-sm text-muted-foreground">{tier.hours}</p>
+                <h3 className="mt-1 text-xl font-semibold text-foreground">{tier.name}</h3>
+                <p className="mt-6">
+                  <span className="text-4xl font-semibold text-foreground">${tier.price}</span>
+                  <span className="text-muted-foreground ml-1">/hr</span>
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Shared features — applies to both */}
+          <div className="border-t border-border px-6 py-6 xl:px-10">
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-4">
+              Every session includes
+            </p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {SHARED_FEATURES.map((feature) => (
+                <li key={feature} className="flex items-center gap-2">
+                  <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                  <span className="text-sm text-muted-foreground">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   );

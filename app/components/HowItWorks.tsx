@@ -1,98 +1,81 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Calendar, Smartphone, LockOpen } from "lucide-react";
-import { GolferIcon } from "./GolferIcon";
+import { Timeline } from "@/components/ui/timeline";
 
-const steps = [
+const imgShadow = "rounded-lg object-cover w-full max-w-lg aspect-video bg-muted shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]";
+
+const data = [
   {
-    icon: Calendar,
-    title: "Book Online",
-    description:
-      "Select your preferred time slot and bay. Pay securely online with our integrated booking system.",
+    title: "Pick a Day",
+    content: (
+      <div>
+        <p className="text-muted-foreground text-sm md:text-base mb-6 max-w-md">
+          Open the booking page and choose the day that works for you. Available up to a month in advance.
+        </p>
+        <img
+          src="/images/bookingPage.png"
+          alt="Selecting a day on the GolfLabs booking calendar"
+          className={imgShadow}
+        />
+      </div>
+    ),
   },
   {
-    icon: Smartphone,
-    title: "Get Access Code",
-    description:
-      "Receive your access code and arrive at your scheduled time. Our smart locks grant you secure entry.",
+    title: "Pick a Time",
+    content: (
+      <div>
+        <p className="text-muted-foreground text-sm md:text-base mb-6 max-w-md">
+          Select your start time and how long you want to play. Book as little as 15 minutes — no minimum hour commitment.
+        </p>
+        <img
+          src="/images/bookingPage2.png"
+          alt="Selecting a time slot on the GolfLabs booking page"
+          className={imgShadow}
+        />
+      </div>
+    ),
   },
   {
-    icon: LockOpen,
-    title: "Enter Facility",
-    description: "Use your code to unlock the door - no staff needed",
+    title: "Checkout",
+    content: (
+      <div>
+        <p className="text-muted-foreground text-sm md:text-base mb-6 max-w-md">
+          Pay securely via Stripe. You'll get a confirmation email right away, and an unlock link 15 minutes before your session.
+        </p>
+        <img
+          src="/images/checkout.png"
+          alt="GolfLabs secure checkout via Stripe payment screen"
+          className={imgShadow}
+        />
+      </div>
+    ),
   },
   {
-    icon: GolferIcon,
-    title: "Start Playing",
-    description:
-      "Step into your bay and start playing. Everything is set up and ready for your session.",
+    title: "Play",
+    content: (
+      <div>
+        <p className="text-muted-foreground text-sm md:text-base mb-6 max-w-md">
+          Tap the unlock link, walk in, and the bay is yours. Pick a course, grab the clubs, and start swinging.
+        </p>
+        <img
+          src="/images/gameday_card.webp"
+          alt="Playing a round on GolfLabs Uneekor golf simulator with GameDay"
+          className={imgShadow}
+        />
+      </div>
+    ),
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl desk:text-5xl font-bold mb-4 tracking-wide text-foreground">
-            How It <span className="text-primary">Works</span>
-          </h2>
-          <p className="text-xl text-muted-foreground">Get on the course in 4 simple steps</p>
-        </motion.div>
-
-        <motion.div
-          variants={{
-            animate: {
-              transition: { staggerChildren: 0.2 },
-            },
-          }}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid desk:grid-cols-4 gap-8"
-        >
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.title}
-              variants={{
-                initial: { opacity: 0, y: 30 },
-                animate: {
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 0.6,
-                    delay: 0.2 + index * 0.2,
-                  },
-                },
-              }}
-              whileHover={{ y: -10 }}
-              transition={{ duration: 0.3 }}
-              className="text-center group p-6 rounded-lg shadow-xl transition-shadow duration-300 bg-muted/30"
-            >
-              <div className="mb-6 relative">
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 360 }}
-                  transition={{ duration: 0.5 }}
-                  className="w-20 h-20 mx-auto bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-md"
-                >
-                  <step.icon className="h-10 w-10 text-primary-foreground" />
-                </motion.div>
-                {index < steps.length - 1 && (
-                  <div className="hidden desk:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-primary to-transparent opacity-50" />
-                )}
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-foreground">{step.title}</h3>
-              <p className="text-muted-foreground">{step.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+    <section id="how-it-works" className="py-16 md:py-24">
+      <div className="mx-auto max-w-5xl px-6 sm:px-8">
+      <Timeline
+        data={data}
+        title="Book to tee-off in 4 steps"
+        subtitle="No membership, no check-in. Pick a time, pay online, and walk right in."
+      />
       </div>
     </section>
   );

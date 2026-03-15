@@ -1,112 +1,147 @@
-"use client";
+'use client';
+import React from 'react';
+import Link from 'next/link';
+import { Button, buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
+import { useScroll } from '@/components/ui/use-scroll';
+import { createPortal } from 'react-dom';
+import { APP_URL } from '@/lib/config';
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { APP_URL } from "@/lib/config";
+const links = [
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'About', href: '/about' },
+  { label: 'Getting Started', href: '/getting-started' },
+  { label: 'FAQ', href: '/faq' },
+];
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [open, setOpen] = React.useState(false);
+  const scrolled = useScroll(10);
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  React.useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-background/80 backdrop-blur-sm"
-      }`}
+    <header
+      className={cn('fixed top-0 z-50 w-full border-b border-transparent transition-all duration-300', {
+        'bg-background/95 supports-[backdrop-filter]:bg-background/50 border-border backdrop-blur-lg':
+          scrolled,
+      })}
     >
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-2xl font-bold text-foreground"
-          >
-            <Link href="/">
-              <span className="text-primary">GOLF</span>
-              <span className="text-foreground">LABS</span>
-            </Link>
-          </motion.div>
+      <nav className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-4">
+        <Link href="/" className="text-2xl font-bold tracking-tight px-2">
+          <span className="text-primary">GOLF</span>
+          <span className="text-foreground">LABS</span>
+        </Link>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="hidden desk:flex space-x-8"
-          >
-            <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
-            <Link href="/getting-started" className="text-foreground hover:text-primary transition-colors">Getting Started</Link>
-            <a href="#pricing" className="text-foreground hover:text-primary transition-colors">Pricing</a>
-            <a href="#how-it-works" className="text-foreground hover:text-primary transition-colors">How It Works</a>
-            <a href="#features" className="text-foreground hover:text-primary transition-colors">Features</a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-            <Link href="/licensing" className="text-foreground hover:text-primary transition-colors">Licensing</Link>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex items-center space-x-4"
-          >
-            <a href={`${APP_URL}/dashboard?tab=book`}>
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold btn-hover">
-                Book Now
-              </Button>
-            </a>
-
-            {/* Mobile menu toggle */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="desk:hidden p-2 text-foreground"
-              aria-label="Toggle menu"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {isMobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </motion.div>
+        <div className="hidden items-center gap-5 md:flex">
+          {links.map((link) =>
+            link.href.startsWith('/') && !link.href.startsWith('/#') ? (
+              <Link
+                key={link.label}
+                className={buttonVariants({ variant: 'ghost' })}
+                href={link.href}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                className={buttonVariants({ variant: 'ghost' })}
+                href={link.href}
+              >
+                {link.label}
+              </a>
+            )
+          )}
+          <a href={`${APP_URL}/dashboard?tab=book`}>
+            <Button>Book Now</Button>
+          </a>
         </div>
 
-        {/* Mobile menu */}
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            className="desk:hidden mt-4 pb-4 space-y-3"
-          >
-            <a href="#home" onClick={() => setIsMobileMenuOpen(false)} className="block text-foreground hover:text-primary transition-colors">Home</a>
-            <Link href="/getting-started" onClick={() => setIsMobileMenuOpen(false)} className="block text-foreground hover:text-primary transition-colors">Getting Started</Link>
-            <a href="#pricing" onClick={() => setIsMobileMenuOpen(false)} className="block text-foreground hover:text-primary transition-colors">Pricing</a>
-            <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="block text-foreground hover:text-primary transition-colors">How It Works</a>
-            <a href="#features" onClick={() => setIsMobileMenuOpen(false)} className="block text-foreground hover:text-primary transition-colors">Features</a>
-            <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="block text-foreground hover:text-primary transition-colors">About</a>
-            <Link href="/licensing" onClick={() => setIsMobileMenuOpen(false)} className="block text-foreground hover:text-primary transition-colors">Licensing</Link>
-            <a href={`${APP_URL}/dashboard?tab=book`} className="block">
-              <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
-                Book Now
-              </Button>
-            </a>
-          </motion.div>
+        <Button
+          size="icon"
+          variant="outline"
+          onClick={() => setOpen(!open)}
+          className="md:hidden"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          aria-label="Toggle menu"
+        >
+          <MenuToggleIcon open={open} className="size-5" duration={300} />
+        </Button>
+      </nav>
+
+      <MobileMenu open={open} className="flex flex-col justify-between gap-2">
+        <div className="grid gap-y-2">
+          {links.map((link) =>
+            link.href.startsWith('/') && !link.href.startsWith('/#') ? (
+              <Link
+                key={link.label}
+                className={buttonVariants({ variant: 'ghost', className: 'justify-start' })}
+                href={link.href}
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                className={buttonVariants({ variant: 'ghost', className: 'justify-start' })}
+                href={link.href}
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+              </a>
+            )
+          )}
+        </div>
+        <div className="flex flex-col gap-2">
+          <a href={`${APP_URL}/dashboard?tab=book`}>
+            <Button className="w-full">Book Now</Button>
+          </a>
+        </div>
+      </MobileMenu>
+    </header>
+  );
+}
+
+type MobileMenuProps = React.ComponentProps<'div'> & {
+  open: boolean;
+};
+
+function MobileMenu({ open, children, className, ...props }: MobileMenuProps) {
+  if (!open || typeof window === 'undefined') return null;
+
+  return createPortal(
+    <div
+      id="mobile-menu"
+      className={cn(
+        'bg-background/95 supports-[backdrop-filter]:bg-background/50 backdrop-blur-lg',
+        'fixed top-[64px] right-0 bottom-0 left-0 z-40 flex flex-col overflow-hidden border-y md:hidden',
+      )}
+    >
+      <div
+        data-slot={open ? 'open' : 'closed'}
+        className={cn(
+          'data-[slot=open]:animate-in data-[slot=open]:zoom-in-97 ease-out',
+          'size-full p-4',
+          className,
         )}
+        {...props}
+      >
+        {children}
       </div>
-    </motion.nav>
+    </div>,
+    document.body,
   );
 }

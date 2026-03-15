@@ -1,0 +1,60 @@
+# GolfLabs
+
+> 24/7 self-service golf simulator in Southampton, NJ. No membership required.
+
+## About
+
+GolfLabs is a private, 1-bay golf simulator facility at 133 Eayrestown Rd, Southampton, NJ 08088. Open 24 hours a day, 7 days a week, 365 days a year. Fully self-service — no staff on-site. Book online, get a smart lock unlock link via email, tap to enter, and play.
+
+## Pricing
+
+- Off-Peak (2am–9am): $25/hr
+- Peak (9am–2am): $35/hr
+- 15-minute minimum booking
+- No membership fees, no initiation fees, no hidden charges
+- Same price for 1–4 people
+
+## Technology
+
+- Uneekor EYE Mini SimKit (overhead launch monitor)
+- GameDay simulation software with 50+ world-famous courses
+- Ball data: ball speed, launch angle, side angle, backspin, sidespin, total spin, carry distance
+- Club data (with reflective sticker): club speed, club path, angle of attack, smash factor, face angle, dynamic loft
+- Courses include: Pebble Beach, St Andrews, Bethpage Black, and more
+
+## Amenities
+
+- Private bay (fits up to 4 people)
+- BYOB — fridge provided
+- Right-handed clubs available in the bay
+- Free parking
+- Couch seating area
+- Club stickers provided for club data tracking
+
+## Location
+
+- Address: 133 Eayrestown Rd, Southampton, NJ 08088
+- Phone: (856) 745-1025
+- Near Pivotal Training gym, off Route 206
+- Free parking right outside
+
+## Booking
+
+- Book online at https://app.golflabs.us/dashboard?tab=book
+- Available up to a month in advance
+- Confirmation email sent immediately
+- Unlock link sent 15 minutes before session
+- Payment via Stripe (secure checkout)
+
+## Service Area
+
+Burlington County NJ and surrounding areas including: Southampton, Mount Holly, Medford, Lumberton, Pemberton, Marlton, Moorestown, Burlington Township, Eastampton, Hainesport, Shamong, Tabernacle, Vincentown, Browns Mills, Bordentown, Willingboro, Cherry Hill, Evesham, Mount Laurel
+
+## Links
+
+- Website: https://golflabs.us
+- Book Now: https://app.golflabs.us/dashboard?tab=book
+- Instagram: https://instagram.com/golflabs.us
+- About: https://golflabs.us/about
+- FAQ: https://golflabs.us/faq
+- Getting Started: https://golflabs.us/getting-started

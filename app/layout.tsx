@@ -16,44 +16,34 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "GolfLabs - 24/7 Self-Service Golf Simulators",
+    default: "Golf Simulator Southampton NJ | 24/7 No Membership | GolfLabs",
     template: "%s | GolfLabs",
   },
   description:
-    "Experience premium 24/7 self-service golf simulators with Uneekor technology, smart lock access, and 50+ courses. Book online and play anytime.",
-  keywords: [
-    "golf simulator",
-    "indoor golf",
-    "24/7 golf",
-    "self-service golf",
-    "Uneekor simulator",
-    "golf practice",
-    "golf simulator booking",
-    "indoor golf near me",
-  ],
+    "24/7 self-service golf simulator in Southampton, NJ. No membership required. Uneekor EYE Mini, 50+ courses. $25–$35/hr — half the price of other indoor golf in Burlington County. Book online, unlock with your phone.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://golflabs.us",
     siteName: "GolfLabs",
-    title: "GolfLabs - 24/7 Self-Service Golf Simulators",
+    title: "GolfLabs — 24/7 Golf Simulator in Southampton NJ | No Membership",
     description:
-      "Premium 24/7 self-service golf simulators with Uneekor technology. Book online, unlock with your phone, and play anytime.",
+      "Book a private golf simulator 24/7 in Southampton, NJ. No membership required. Uneekor technology, 50+ courses, smart lock access. From $25/hr.",
     images: [
       {
-        url: "/images/heroBanner.png",
+        url: "/images/bay1.jpg",
         width: 1200,
         height: 630,
-        alt: "GolfLabs - Premium Golf Simulator Bays",
+        alt: "GolfLabs golf simulator bay in Southampton, NJ",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GolfLabs - 24/7 Self-Service Golf Simulators",
+    title: "GolfLabs — 24/7 Golf Simulator in Southampton NJ",
     description:
-      "Premium 24/7 self-service golf simulators with Uneekor technology. Book online and play anytime.",
-    images: ["/images/heroBanner.png"],
+      "No membership. No staff. From $25/hr. Book online, unlock with your phone, play anytime. Southampton, NJ.",
+    images: ["/images/bay1.jpg"],
   },
   robots: {
     index: true,
@@ -71,6 +61,27 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${lexend.variable} ${inter.variable} font-sans antialiased`}>
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "GolfLabs",
+              "url": "https://golflabs.us",
+              "logo": "https://golflabs.us/images/bay1.jpg",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+18567451025",
+                "contactType": "customer service",
+              },
+              "sameAs": [
+                "https://instagram.com/golflabs.us",
+                "https://share.google/w6oDRCrUYfnvphWea",
+              ],
+            }),
+          }}
+        />
       </body>
     </html>
   );
