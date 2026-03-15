@@ -87,16 +87,15 @@ export function HeroSection({ city, state }: HeroSectionProps) {
             {city}, {state} &mdash; Open 24/7
           </motion.div>
 
-          {/* Headline */}
-          <motion.h1
-            variants={itemVariants}
+          {/* Headline — no animation to avoid LCP delay */}
+          <h1
             className="mb-6 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl leading-[1.1] max-w-3xl"
           >
             Your private golf simulator.{" "}
             <span className="bg-gradient-to-r from-primary via-primary/70 to-foreground/80 bg-clip-text text-transparent">
               No membership required.
             </span>
-          </motion.h1>
+          </h1>
 
           {/* Description */}
           <motion.p
@@ -114,7 +113,7 @@ export function HeroSection({ city, state }: HeroSectionProps) {
           >
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/85 text-white font-semibold px-8 py-6 text-base rounded-full transition-colors duration-200"
+              className="bg-primary hover:bg-primary/85 text-white hover:text-white font-semibold px-8 py-6 text-base rounded-full transition-colors duration-200"
               asChild
             >
               <a href={`${APP_URL}/dashboard?tab=book`}>

@@ -64,7 +64,7 @@ export function Navbar() {
             )
           )}
           <a href={`${APP_URL}/dashboard?tab=book`}>
-            <Button>Book Now</Button>
+            <Button className="cursor-pointer">Book Now</Button>
           </a>
         </div>
 
