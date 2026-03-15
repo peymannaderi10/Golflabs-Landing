@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { APP_URL } from "@/lib/config";
 
 export function CTASection() {
@@ -27,10 +26,9 @@ export function CTASection() {
           <a href={`${APP_URL}/dashboard?tab=book`}>
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-6 text-base cursor-pointer"
+              className="font-semibold px-8 py-6 text-base cursor-pointer"
             >
               Book Now
-              <ArrowRight className="ml-2 size-4" />
             </Button>
           </a>
         </motion.div>

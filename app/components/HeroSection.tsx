@@ -50,13 +50,13 @@ export function HeroSection({ city, state }: HeroSectionProps) {
     >
       {/* Background images */}
       <img
-        src="/images/heroBanner.png"
+        src="/images/heroBanner.webp"
         alt="GolfLabs indoor golf simulator bay with Uneekor EYE Mini in Southampton NJ"
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none hidden md:block"
       />
       <img
-        src="/images/mobileHero.png"
+        src="/images/mobileHero.webp"
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none md:hidden"

@@ -25,7 +25,7 @@ export function FounderStorySection() {
 
         {/* iPhone image — desktop: absolute background; mobile: inline below content */}
         <img
-          src="/images/iPhoneEmail.png"
+          src="/images/iPhoneEmail.webp"
           alt="GolfLabs smart lock unlock email on iPhone"
           aria-hidden="true"
           className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[32rem] xl:w-[38rem] object-contain pointer-events-none opacity-90 z-0"
@@ -104,8 +104,10 @@ export function FounderStorySection() {
           className="lg:hidden mt-12"
         >
           <img
-            src="/images/iPhoneEmailMobile.png"
+            src="/images/iPhoneEmailMobile.webp"
             alt="GolfLabs unlock email on iPhone"
+            width={560}
+            height={847}
             className="w-80 mx-auto object-contain"
           />
         </motion.div>

@@ -74,7 +74,7 @@ export function FeaturesSection() {
             <div className="[transform:skewY(-2deg)skewX(-2deg)rotateX(6deg)]">
               <div className="aspect-[88/36] relative">
                 <img
-                  src="/images/bookingPage.png"
+                  src="/images/bookingPage.webp"
                   className="absolute inset-0 z-10 w-full h-full object-cover object-top rounded-2xl shadow-2xl"
                   alt="GolfLabs online booking platform showing available golf simulator time slots"
                   width={2797}

@@ -10,7 +10,7 @@ const ARRIVAL_STEPS = [
     title: "Check your email",
     description:
       "After booking, you'll receive a confirmation email with your session details and an unlock link.",
-    image: "/images/iPhoneEmailMobile.png",
+    image: "/images/iPhoneEmailMobile.webp",
     portrait: true,
     imgClass: "w-56 sm:w-64",
   },

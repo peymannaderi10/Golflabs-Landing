@@ -13,7 +13,7 @@ const data = [
           Open the booking page and choose the day that works for you. Available up to a month in advance.
         </p>
         <img
-          src="/images/bookingPage.png"
+          src="/images/bookingPage.webp"
           alt="Selecting a day on the GolfLabs booking calendar"
           className={imgShadow}
         />
@@ -28,7 +28,7 @@ const data = [
           Select your start time and how long you want to play. Book as little as 15 minutes — no minimum hour commitment.
         </p>
         <img
-          src="/images/bookingPage2.png"
+          src="/images/bookingPage2.webp"
           alt="Selecting a time slot on the GolfLabs booking page"
           className={imgShadow}
         />
@@ -43,7 +43,7 @@ const data = [
           Pay securely via Stripe. You'll get a confirmation email right away, and an unlock link 15 minutes before your session.
         </p>
         <img
-          src="/images/checkout.png"
+          src="/images/checkout.webp"
           alt="GolfLabs secure checkout via Stripe payment screen"
           className={imgShadow}
         />
