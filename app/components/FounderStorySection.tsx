@@ -104,7 +104,7 @@ export function FounderStorySection() {
           className="lg:hidden mt-12"
         >
           <img
-            src="/images/iphoneEmailMobile.png"
+            src="/images/iPhoneEmailMobile.png"
             alt="GolfLabs unlock email on iPhone"
             className="w-80 mx-auto object-contain"
           />
