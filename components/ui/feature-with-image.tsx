@@ -28,7 +28,7 @@ function FeatureWithImage({
           reverse ? "lg:flex-row-reverse" : "lg:flex-row"
         )}
       >
-        <div className="bg-muted rounded-md w-full aspect-[1.55/1] h-full flex-1 overflow-hidden">
+        <div className="w-full aspect-[1.55/1] h-full flex-[1.5] overflow-visible relative z-10 drop-shadow-2xl">
           {image ?? <div className="w-full h-full bg-muted" />}
         </div>
         <div className="flex gap-4 flex-col flex-1">
