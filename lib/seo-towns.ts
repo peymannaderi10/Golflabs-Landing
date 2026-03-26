@@ -289,6 +289,6 @@ export function getTownBySlug(slug: string): TownData | undefined {
 
 export function getNearbyTowns(town: TownData): TownData[] {
   return town.nearby
-    .map((n) => SEO_TOWNS.find((t) => t.slug.includes(n)))
+    .map((n) => SEO_TOWNS.find((t) => t.slug === `golf-simulator-${n}-nj`))
     .filter(Boolean) as TownData[];
 }
