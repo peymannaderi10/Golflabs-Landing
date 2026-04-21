@@ -63,7 +63,7 @@ export function Navbar() {
               </a>
             )
           )}
-          <a href={`${APP_URL}/dashboard?tab=book`}>
+          <a href={`${APP_URL}`}>
             <Button className="cursor-pointer">Book Now</Button>
           </a>
         </div>
@@ -106,7 +106,7 @@ export function Navbar() {
           )}
         </div>
         <div className="flex flex-col gap-2">
-          <a href={`${APP_URL}/dashboard?tab=book`}>
+          <a href={`${APP_URL}`}>
             <Button className="w-full">Book Now</Button>
           </a>
         </div>

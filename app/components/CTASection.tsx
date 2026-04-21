@@ -23,7 +23,7 @@ export function CTASection() {
               Book your session in under 60 seconds. Show up, unlock the door, and play.
             </p>
           </div>
-          <a href={`${APP_URL}/dashboard?tab=book`}>
+          <a href={APP_URL}>
             <Button
               size="lg"
               className="font-semibold px-8 py-6 text-base cursor-pointer"

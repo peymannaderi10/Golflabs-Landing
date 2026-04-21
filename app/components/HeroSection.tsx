@@ -116,7 +116,7 @@ export function HeroSection({ city, state }: HeroSectionProps) {
               className="bg-primary hover:bg-primary/85 text-white hover:text-white font-semibold px-8 py-6 text-base rounded-full transition-colors duration-200"
               asChild
             >
-              <a href={`${APP_URL}/dashboard?tab=book`}>
+              <a href={APP_URL}>
                 Book Now
               </a>
             </Button>

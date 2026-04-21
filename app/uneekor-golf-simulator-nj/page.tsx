@@ -52,7 +52,7 @@ export default function UneekorGolfSimulatorNJPage() {
             </p>
             <div className="mt-8">
               <a
-                href={`${APP_URL}/dashboard?tab=book`}
+                href={APP_URL}
                 className="inline-flex items-center gap-2 rounded-md border border-primary bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-transparent hover:text-primary transition-colors cursor-pointer"
               >
                 Book a Session
