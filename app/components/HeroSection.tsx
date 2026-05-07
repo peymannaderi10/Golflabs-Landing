@@ -139,7 +139,7 @@ export function HeroSection({ city, state }: HeroSectionProps) {
           >
             {[
               { value: "24/7", label: "Always Open" },
-              { value: "50+", label: "Courses" },
+              { value: "2400+", label: "Courses" },
               { value: "15 min", label: "Min. Booking" },
             ].map((stat) => (
               <motion.div key={stat.label} variants={itemVariants} className="space-y-1">

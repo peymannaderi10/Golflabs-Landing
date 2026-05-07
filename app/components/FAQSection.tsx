@@ -46,7 +46,7 @@ const faqData = [
     id: 7,
     question: "What courses can I play?",
     answer:
-      "50+ world-famous courses including Pebble Beach, St Andrews, Bethpage Black, and more through Uneekor GameDay. You can also use the driving range and practice modes.",
+      "2400+ world-famous courses including Pebble Beach, St Andrews, Bethpage Black, and more through GSPro. You can also use the driving range and practice modes.",
     icon: "⛳",
     iconPosition: "right" as const,
   },
@@ -62,7 +62,7 @@ const faqData = [
     id: 9,
     question: "What simulator technology do you use?",
     answer:
-      "We use the Uneekor EYE Mini SimKit with GameDay simulation software. It tracks ball speed, launch angle, spin rate, carry distance, and more — solid data to help you improve.",
+      "We use the Uneekor EYE Mini SimKit with GSPro simulation software. It tracks ball speed, launch angle, spin rate, carry distance, and more — solid data to help you improve.",
   },
   {
     id: 10,

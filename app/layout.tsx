@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | GolfLabs",
   },
   description:
-    "24/7 self-service golf simulator in Southampton, NJ. No membership required. Uneekor EYE Mini, 50+ courses. $25–$35/hr — half the price of other indoor golf in Burlington County. Book online, unlock with your phone.",
+    "24/7 self-service golf simulator in Southampton, NJ. No membership required. Uneekor EYE Mini with GSPro, 2400+ courses. $25–$35/hr — half the price of other indoor golf in Burlington County. Book online, unlock with your phone.",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "GolfLabs",
     title: "GolfLabs — 24/7 Golf Simulator in Southampton NJ | No Membership",
     description:
-      "Book a private golf simulator 24/7 in Southampton, NJ. No membership required. Uneekor technology, 50+ courses, smart lock access. From $25/hr.",
+      "Book a private golf simulator 24/7 in Southampton, NJ. No membership required. Uneekor technology with GSPro, 2400+ courses, smart lock access. From $25/hr.",
     images: [
       {
         url: "/images/bay1.jpg",

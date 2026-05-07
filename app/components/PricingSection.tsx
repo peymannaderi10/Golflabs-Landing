@@ -30,7 +30,7 @@ const FALLBACK_TIERS = [
 
 const SHARED_FEATURES = [
   "Private bay — up to 4 people",
-  "50+ courses on Uneekor GameDay",
+  "2400+ courses on GSPro",
   "Clubs provided (right-handed)",
   "BYOB welcome",
   "15-minute minimum booking",

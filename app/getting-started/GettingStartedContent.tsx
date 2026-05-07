@@ -33,10 +33,10 @@ const ARRIVAL_STEPS = [
   },
   {
     step: 4,
-    title: "Pick Practice or Play",
+    title: "Have fun!",
     description:
-      "Choose Practice for the driving range with full shot metrics, or Play to start a round on any of 50+ world-famous courses.",
-    image: "/images/uneekorLauncher.png",
+      "Pick Local Match to play on any of the 2400+ courses, or Practice to hit the range with detailed metrics, and Challenges to test your skills.",
+    image: "/images/getting-started/gspro-homescreen.webp",
     portrait: false,
   },
 ];
@@ -47,7 +47,14 @@ const TROUBLESHOOTING_STEPS = [
     title: "Uneekor shows \"Device Not Found\"",
     image: "/images/getting-started/devicenotfound.png",
     whatToDo:
-      "Make sure the launch monitor is turned on, then click the Retry Now button at the top of the screen. You are now ready to launch Game Day for playing rounds against friends or practice if you'd like to just hit the range with detailed metrics!",
+      "Make sure the launch monitor is turned on, then click the Retry Now button at the top of the screen. You are now ready to launch GSPro Third Party App for playing rounds against friends or practice if you'd like to just hit the range with detailed metrics!",
+  },
+  {
+    id: "reconnect-gspro",
+    title: "Reconnect to GSPro",
+    image: "/images/getting-started/devicenotfound-2.png",
+    whatToDo:
+      "Open the GSPro Connector inside the Uneekor launcher to reconnect to GSPro. If GSPro itself isn't running, open it from the desktop shortcut first, then launch the connector.",
   },
 ];
 
@@ -87,7 +94,7 @@ export function GettingStartedContent() {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* Hero + Video */}
+      {/* Hero + Primary Video */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
           <div className="flex flex-col md:flex-row md:items-center md:gap-16 gap-10">
@@ -105,20 +112,18 @@ export function GettingStartedContent() {
                 How to use the simulator
               </h1>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                A 3-minute walkthrough covering everything from booking to your
-                first swing. Scroll down for a step-by-step guide with screenshots.
-              </p>
-              <p className="mt-6 text-sm text-muted-foreground">
-                Video length: ~3 minutes
+                Start with the Getting Settled walkthrough — booking to your
+                first swing. The shorter clips below cover practice, play, and
+                left-handed setup once you're in the bay.
               </p>
             </motion.div>
 
-            {/* Video — right side */}
+            {/* Primary video — right side */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="md:w-1/2 flex justify-center"
+              className="md:w-1/2 flex flex-col items-center"
             >
               <div className="w-full max-w-xs overflow-hidden rounded-lg border border-border shadow-sm">
                 <video
@@ -128,13 +133,83 @@ export function GettingStartedContent() {
                   playsInline
                   preload="metadata"
                 >
-                  <source src="/videos/gettingStarted.webm" type="video/webm" />
+                  <source src="/videos/getting-settled.webm" type="video/webm" />
                   <p className="p-4 text-muted-foreground">
                     Your browser does not support the video tag.
                   </p>
                 </video>
               </div>
+              <p className="mt-3 text-sm font-medium text-foreground">Getting settled</p>
+              <p className="text-xs text-muted-foreground">Watch this first</p>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Topic-specific walkthroughs */}
+      <section className="pb-16 md:pb-24">
+        <div className="mx-auto max-w-5xl px-6 sm:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="mb-10 md:text-center"
+          >
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
+              Quick walkthroughs
+            </h2>
+            <p className="mt-2 text-muted-foreground md:max-w-lg md:mx-auto">
+              Short clips for the things you'll do every session.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            {[
+              {
+                src: "/videos/practice-howto.webm",
+                title: "Practice",
+                description: "Driving range with full ball + club metrics.",
+              },
+              {
+                src: "/videos/play-howto.webm",
+                title: "Play a round",
+                description: "Pick a course and start a Local Match.",
+              },
+              {
+                src: "/videos/left-handed-howto.webm",
+                title: "Left-handed setup",
+                description: "Switch the bay to a left-handed configuration.",
+              },
+            ].map((clip, index) => (
+              <motion.div
+                key={clip.src}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                viewport={{ once: true, margin: "-50px" }}
+                className="flex flex-col items-center"
+              >
+                <div className="w-full max-w-xs overflow-hidden rounded-lg border border-border shadow-sm">
+                  <video
+                    className="w-full aspect-[9/16] bg-black object-contain"
+                    controls
+                    muted
+                    playsInline
+                    preload="metadata"
+                  >
+                    <source src={clip.src} type="video/webm" />
+                    <p className="p-4 text-muted-foreground">
+                      Your browser does not support the video tag.
+                    </p>
+                  </video>
+                </div>
+                <p className="mt-3 text-sm font-semibold text-foreground">{clip.title}</p>
+                <p className="text-xs text-muted-foreground text-center px-4">
+                  {clip.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -270,8 +345,8 @@ export function GettingStartedContent() {
             >
               <div className="overflow-hidden bg-muted/30">
                 <img
-                  src="/images/practice.webp"
-                  alt="Uneekor View practice mode on the projector"
+                  src="/images/getting-started/gspro-practice.webp"
+                  alt="GSPro practice mode on the projector"
                   className="w-full aspect-video object-cover object-center"
                 />
               </div>
@@ -280,7 +355,7 @@ export function GettingStartedContent() {
                   Practice
                 </h3>
                 <p className="text-sm text-primary font-medium mb-3">
-                  Uneekor View
+                  GSPro Practice
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li>Driving range with full shot data</li>
@@ -301,8 +376,8 @@ export function GettingStartedContent() {
             >
               <div className="overflow-hidden bg-muted/30">
                 <img
-                  src="/images/Play.png"
-                  alt="GameDay course simulation on the projector"
+                  src="/images/getting-started/gspro-play.webp"
+                  alt="GSPro course simulation on the projector"
                   className="w-full aspect-video object-cover object-center"
                 />
               </div>
@@ -311,10 +386,10 @@ export function GettingStartedContent() {
                   Play
                 </h3>
                 <p className="text-sm text-primary font-medium mb-3">
-                  GameDay
+                  GSPro
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>Play full rounds on 50+ world-famous courses</li>
+                  <li>Play full rounds on 2400+ world-famous courses</li>
                   <li>Pebble Beach, St Andrews, Bethpage Black, and more</li>
                   <li>Realistic course visuals on the projector</li>
                   <li>Play solo or compete with up to 4 players</li>

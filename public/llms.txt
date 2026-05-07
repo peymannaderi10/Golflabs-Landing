@@ -17,7 +17,7 @@ GolfLabs is a private, 1-bay golf simulator facility at 133 Eayrestown Rd, South
 ## Technology
 
 - Uneekor EYE Mini SimKit (overhead launch monitor)
-- GameDay simulation software with 50+ world-famous courses
+- GSPro simulation software with 2400+ world-famous courses
 - Ball data: ball speed, launch angle, side angle, backspin, sidespin, total spin, carry distance
 - Club data (with reflective sticker): club speed, club path, angle of attack, smash factor, face angle, dynamic loft
 - Courses include: Pebble Beach, St Andrews, Bethpage Black, and more

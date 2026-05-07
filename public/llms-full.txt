@@ -37,13 +37,13 @@ GolfLabs is a 1-bay golf simulator facility located at 133 Eayrestown Rd, Southa
 - Reflective stickers provided in the bay — easy to apply and remove, no residue
 
 ### Simulation Software
-- **Uneekor GameDay** — 50+ world-famous golf courses
+- **GSPro** — 2400+ world-famous golf courses
 - Featured courses: Pebble Beach, St Andrews, Bethpage Black, Torrey Pines, TPC Sawgrass
 - Practice mode: driving range with full shot data and dispersion
 - Play mode: full 18-hole rounds, solo or multiplayer (up to 4)
 
 ### Practice Software
-- **Uneekor View** — driving range with shot tracer, dispersion pattern, and full ball/club metrics on the projector
+- **GSPro practice / driving range** — shot tracer, dispersion pattern, and full ball/club metrics on the projector
 
 ## How Booking Works
 
@@ -131,13 +131,13 @@ Yes — up to 4 people per session. Same price whether it's just you or a group.
 We have right-handed clubs in the bay. Wear golf shoes or clean sneakers. It's BYOB — there's a fridge.
 
 **What courses can I play?**
-50+ world-famous courses through GameDay including Pebble Beach, St Andrews, and Bethpage Black.
+2400+ world-famous courses through GSPro including Pebble Beach, St Andrews, and Bethpage Black.
 
 **Where are you located?**
 133 Eayrestown Rd, Southampton, NJ 08088. Free parking. Near Pivotal Training gym off Route 206.
 
 **What simulator technology do you use?**
-Uneekor EYE Mini SimKit with GameDay software. Tracks ball speed, launch angle, spin rate, carry distance, and more.
+Uneekor EYE Mini SimKit with GSPro software. Tracks ball speed, launch angle, spin rate, carry distance, and more.
 
 **Is the facility staffed?**
 No, and that's by design. Fully self-service means no staffing costs, which keeps prices at $25–35/hr.

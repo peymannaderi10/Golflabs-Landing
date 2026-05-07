@@ -50,7 +50,7 @@ export default function FAQPage() {
                 name: "What simulator technology does GolfLabs use?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "We use the Uneekor EYE Mini SimKit with GameDay simulation software. It tracks ball speed, launch angle, spin rate, carry distance, and more.",
+                  text: "We use the Uneekor EYE Mini SimKit with GSPro simulation software. It tracks ball speed, launch angle, spin rate, carry distance, and more.",
                 },
               },
               {

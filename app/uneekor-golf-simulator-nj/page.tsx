@@ -9,7 +9,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Uneekor EYE Mini Golf Simulator in NJ | GolfLabs Southampton",
   description:
-    "Play on a Uneekor EYE Mini SimKit with GameDay software at GolfLabs. Ball speed, launch angle, spin rate, carry distance tracking. 50+ courses. Southampton, NJ.",
+    "Play on a Uneekor EYE Mini SimKit with GSPro software at GolfLabs. Ball speed, launch angle, spin rate, carry distance tracking. 2400+ courses. Southampton, NJ.",
   alternates: { canonical: "https://golflabs.us/uneekor-golf-simulator-nj" },
 };
 
@@ -47,7 +47,7 @@ export default function UneekorGolfSimulatorNJPage() {
               Uneekor EYE Mini Golf Simulator
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl leading-relaxed">
-              Camera-based overhead launch monitor with GameDay simulation software.
+              Camera-based overhead launch monitor with GSPro simulation software.
               Accurate ball and club data on every shot — no radar guesswork.
             </p>
             <div className="mt-8">
@@ -129,7 +129,7 @@ export default function UneekorGolfSimulatorNJPage() {
         </div>
       </section>
 
-      {/* GameDay + Modes */}
+      {/* GSPro + Modes */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
           <div className="max-w-2xl mb-12">
@@ -145,7 +145,7 @@ export default function UneekorGolfSimulatorNJPage() {
             {/* Practice */}
             <div className="p-8 md:border-r border-border">
               <p className="text-xs font-semibold text-primary tracking-widest uppercase mb-3">
-                Uneekor View
+                GSPro Practice
               </p>
               <h3 className="text-xl font-semibold text-foreground mb-4">
                 Practice & Range
@@ -161,10 +161,10 @@ export default function UneekorGolfSimulatorNJPage() {
             {/* Play */}
             <div className="p-8 border-t border-border md:border-t-0">
               <p className="text-xs font-semibold text-primary tracking-widest uppercase mb-3">
-                GameDay
+                GSPro
               </p>
               <h3 className="text-xl font-semibold text-foreground mb-4">
-                Course Play — 50+ Courses
+                Course Play — 2400+ Courses
               </h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Pebble Beach, St Andrews, Bethpage Black & more</li>

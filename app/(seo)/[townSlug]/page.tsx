@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!town) return {};
 
   const title = `Golf Simulator Near ${town.town} NJ | 24/7 No Membership | GolfLabs`;
-  const description = `Looking for a golf simulator near ${town.town}, NJ? GolfLabs is ${town.driveTime} away. $25–$35/hr, 24/7 access, no membership. Uneekor EYE Mini with 50+ courses.`;
+  const description = `Looking for a golf simulator near ${town.town}, NJ? GolfLabs is ${town.driveTime} away. $25–$35/hr, 24/7 access, no membership. Uneekor EYE Mini with GSPro and 2400+ courses.`;
 
   return {
     title,
@@ -193,14 +193,14 @@ export default async function TownPage({ params }: PageProps) {
               <div className="overflow-hidden bg-muted/20">
                 <img
                   src="/images/practice.webp"
-                  alt="Uneekor View practice mode showing shot data on the projector"
+                  alt="GSPro practice mode showing shot data on the projector"
                   className="w-full aspect-video object-cover object-center"
                   loading="lazy"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-foreground mb-1">Practice</h3>
-                <p className="text-sm text-primary font-medium mb-3">Uneekor View</p>
+                <p className="text-sm text-primary font-medium mb-3">GSPro Practice</p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li>Driving range with full shot data</li>
                   <li>Ball speed, launch angle, spin rate, carry distance</li>
@@ -214,16 +214,16 @@ export default async function TownPage({ params }: PageProps) {
               <div className="overflow-hidden bg-muted/20">
                 <img
                   src="/images/Play.png"
-                  alt="GameDay course simulation showing a golf hole on the projector"
+                  alt="GSPro course simulation showing a golf hole on the projector"
                   className="w-full aspect-video object-cover object-center"
                   loading="lazy"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-foreground mb-1">Play</h3>
-                <p className="text-sm text-primary font-medium mb-3">GameDay</p>
+                <p className="text-sm text-primary font-medium mb-3">GSPro</p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>Play full rounds on 50+ world-famous courses</li>
+                  <li>Play full rounds on 2400+ world-famous courses</li>
                   <li>Pebble Beach, St Andrews, Bethpage Black & more</li>
                   <li>Realistic course visuals on the projector</li>
                   <li>Play solo or compete with up to 4 players</li>
@@ -249,7 +249,7 @@ export default async function TownPage({ params }: PageProps) {
           <div className="border border-border">
             {[
               { label: "Launch Monitor", value: "Uneekor EYE Mini SimKit" },
-              { label: "Software", value: "GameDay — 50+ world-famous courses" },
+              { label: "Software", value: "GSPro — 2400+ world-famous courses" },
               { label: "Courses", value: "Pebble Beach, St Andrews, Bethpage Black & more" },
               { label: "Bay", value: "Private room, fits up to 4 people" },
               { label: "Clubs", value: "Right-handed set provided (or bring your own)" },

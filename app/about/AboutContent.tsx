@@ -35,7 +35,7 @@ const journeyItems: ModernTimelineItem[] = [
   {
     title: "GolfLabs Opens in Southampton, NJ",
     description:
-      "We opened a 1-bay facility at 133 Eayrestown Rd — the first 24/7 no-membership golf simulator in Burlington County. Uneekor EYE Mini SimKit for ball tracking, GameDay software with 50+ world courses, a private bay with a couch and fridge. Book online, get an unlock link, walk in.",
+      "We opened a 1-bay facility at 133 Eayrestown Rd — the first 24/7 no-membership golf simulator in Burlington County. Uneekor EYE Mini SimKit for ball tracking, GSPro software with 2400+ world courses, a private bay with a couch and fridge. Book online, get an unlock link, walk in.",
     date: "2024",
     category: "Launch",
     status: "completed",

@@ -13,9 +13,9 @@ const features = [
   },
   {
     icon: <Monitor className="size-5" />,
-    title: "50+ Courses on GameDay",
+    title: "2400+ Courses on GSPro",
     description:
-      "Pebble Beach, St Andrews, Bethpage Black — play them all on Uneekor's GameDay software.",
+      "Pebble Beach, St Andrews, Bethpage Black — play them all on GSPro, the gold-standard course simulation.",
   },
   {
     icon: <Clock3 className="size-5" />,

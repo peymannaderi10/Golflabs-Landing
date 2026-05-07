@@ -59,7 +59,7 @@ const data = [
         </p>
         <img
           src="/images/gameday_card.webp"
-          alt="Playing a round on GolfLabs Uneekor golf simulator with GameDay"
+          alt="Playing a round on GolfLabs Uneekor golf simulator with GSPro"
           className={imgShadow}
         />
       </div>
