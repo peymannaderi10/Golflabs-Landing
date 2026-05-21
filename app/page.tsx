@@ -10,6 +10,7 @@ import { FAQSection } from "./components/FAQSection";
 import { LocalAreaSection } from "./components/LocalAreaSection";
 import { LocationSection } from "./components/LocationSection";
 import { CTASection } from "./components/CTASection";
+import { MembershipsCTA } from "./components/MembershipsCTA";
 import { Footer } from "./components/Footer";
 
 export default async function Home() {
@@ -29,6 +30,7 @@ export default async function Home() {
       <HeroSection city={city} state={state} />
       <HowItWorks />
       <PricingSection pricingRules={pricingRules} />
+      <MembershipsCTA />
       <FeaturesSection />
       <FounderStorySection />
       <CompetitorComparisonSection />
