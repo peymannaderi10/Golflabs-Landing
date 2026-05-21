@@ -39,6 +39,7 @@ export function Footer({ city = "Southampton", state = "NJ" }: FooterProps) {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link href="/" className="hover:text-primary transition-colors duration-200">Home</Link></li>
               <li><a href="/#pricing" className="hover:text-primary transition-colors duration-200">Pricing</a></li>
+              <li><Link href="/memberships" className="hover:text-primary transition-colors duration-200">Memberships</Link></li>
               <li><Link href="/about" className="hover:text-primary transition-colors duration-200">About</Link></li>
               <li><Link href="/getting-started" className="hover:text-primary transition-colors duration-200">Getting Started</Link></li>
               <li><Link href="/faq" className="hover:text-primary transition-colors duration-200">FAQ</Link></li>

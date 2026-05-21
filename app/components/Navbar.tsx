@@ -10,6 +10,7 @@ import { APP_URL } from '@/lib/config';
 
 const links = [
   { label: 'Pricing', href: '/#pricing' },
+  { label: 'Memberships', href: '/memberships' },
   { label: 'About', href: '/about' },
   { label: 'Getting Started', href: '/getting-started' },
   { label: 'FAQ', href: '/faq' },
