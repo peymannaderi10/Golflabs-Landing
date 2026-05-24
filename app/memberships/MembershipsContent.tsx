@@ -20,22 +20,17 @@ interface Plan {
 
 const PLANS: Plan[] = [
   {
-    id: "founding",
-    name: "Founding Member",
+    id: "beginner",
+    name: "Beginner Membership",
     description:
-      "Founding Members get priority access, 8 monthly bay hours, 24/7 Pivotal Training Gym access, rollover hours, exclusive perks, and first access to every future GolfLabs location, built for people serious about consistent, flexible training.",
-    monthlyPrice: 149,
-    annualPrice: 1430,
+      "A beginner membership for casual golfers, with monthly bay hours, booking priority, built for golfers who want access without full-time commitment.",
+    monthlyPrice: 45,
+    annualPrice: 500,
     highlights: [
-      "8 bay hours/month (peak or off-peak)",
-      "Full 24/7 access to Pivotal Training Gym",
-      "15% off additional hours",
-      "30-day priority booking (public gets 7)",
-      "Rollover unused hours (up to 8hrs/month)",
-      "Founding Member wall recognition",
-      "First access to future GolfLabs locations",
+      "2.5 bay hours/month (peak or off-peak)",
+      "14-day priority booking (public gets 7)",
       "Month-to-month, no penalty",
-      "Annual option: $1,430 (save $359)",
+      "Optional annual: $500 (save $40)",
     ],
   },
   {
@@ -53,6 +48,25 @@ const PLANS: Plan[] = [
       "Second access to select GolfLabs locations",
       "Month-to-month, no penalty",
       "Optional annual: $950 (save $238)",
+    ],
+  },
+  {
+    id: "founding",
+    name: "Founding Member",
+    description:
+      "Founding Members get priority access, 8 monthly bay hours, 24/7 Pivotal Training Gym access, rollover hours, exclusive perks, and first access to every future GolfLabs location, built for people serious about consistent, flexible training.",
+    monthlyPrice: 149,
+    annualPrice: 1430,
+    highlights: [
+      "8 bay hours/month (peak or off-peak)",
+      "Full 24/7 access to Pivotal Training Gym",
+      "15% off additional hours",
+      "30-day priority booking (public gets 7)",
+      "Rollover unused hours (up to 8hrs/month)",
+      "Founding Member wall recognition",
+      "First access to future GolfLabs locations",
+      "Month-to-month, no penalty",
+      "Annual option: $1,430 (save $359)",
     ],
   },
 ];
@@ -153,7 +167,7 @@ export function MembershipsContent() {
 
       {/* Pricing cards */}
       <section className="px-4 md:px-6 pb-20">
-        <div className="grid w-full gap-4 lg:gap-6 max-w-4xl mx-auto lg:grid-cols-2 pt-4">
+        <div className="grid w-full gap-4 lg:gap-6 max-w-6xl mx-auto lg:grid-cols-3 pt-4">
           {PLANS.map((plan) => {
             const price =
               billingInterval === "annual" ? plan.annualPrice : plan.monthlyPrice;
@@ -176,7 +190,7 @@ export function MembershipsContent() {
                   <h3 className="font-medium text-xl text-foreground pt-2">
                     {plan.name}
                   </h3>
-                  <h4 className="mt-3 text-3xl md:text-5xl font-bold">
+                  <h4 className="mt-3 text-3xl md:text-4xl font-bold">
                     <AnimatePresence mode="wait" initial={false}>
                       <motion.span
                         key={`${plan.id}-${billingInterval}`}
