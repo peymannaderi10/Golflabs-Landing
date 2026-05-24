@@ -9,13 +9,13 @@ import { Check, X, ArrowRight, ChevronRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Golf Simulator Prices in NJ | Compare Indoor Golf Costs | GolfLabs",
   description:
-    "Compare golf simulator prices across New Jersey. GolfLabs: $25–$35/hr, no membership required. Optional memberships from $99/mo. Most competitors charge $60–75/hr plus mandatory monthly fees.",
+    "Compare golf simulator prices across New Jersey. GolfLabs: $25–$35/hr, no membership required. Optional memberships from $45/mo. Most competitors charge $60–75/hr plus mandatory monthly fees.",
   alternates: { canonical: "https://golflabs.us/golf-simulator-prices-nj" },
 };
 
 const comparisonRows = [
   { feature: "Hourly rate", us: "$25–$35", them: "$60–$75" },
-  { feature: "Membership required", us: "No (optional from $99/mo)", them: "Yes" },
+  { feature: "Membership required", us: "No (optional from $45/mo)", them: "Yes" },
   { feature: "Open 24/7 for everyone", us: true, them: false },
   { feature: "15-minute minimum", us: true, them: false },
   { feature: "BYOB welcome", us: true, them: false },
@@ -129,7 +129,7 @@ export default function GolfSimulatorPricesNJPage() {
                 </div>
                 <div className="flex justify-between">
                   <span>Membership fee</span>
-                  <span className="font-medium text-foreground">$0 (optional plans from $99/mo)</span>
+                  <span className="font-medium text-foreground">$0 (optional plans from $45/mo)</span>
                 </div>
                 <div className="flex justify-between border-t border-border pt-3 text-base">
                   <span className="font-semibold text-foreground">Total</span>
@@ -214,7 +214,7 @@ export default function GolfSimulatorPricesNJPage() {
             At GolfLabs, the price you see is the price you pay. No membership required, no minimums, no surprises.
             If you play regularly, optional{" "}
             <Link href="/memberships" className="text-primary hover:underline">
-              memberships from $99/mo
+              memberships from $45/mo
             </Link>{" "}
             add monthly bay hours, 15% off extra time, and priority booking.
           </p>
@@ -233,14 +233,52 @@ export default function GolfSimulatorPricesNJPage() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="border border-primary rounded-2xl p-6">
+              <h3 className="text-xl font-semibold text-foreground mb-1">Beginner</h3>
+              <p className="text-3xl font-bold text-foreground mb-3">$45<span className="text-base font-normal text-muted-foreground">/mo</span></p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <Check className="size-4 text-primary flex-shrink-0 mt-0.5" />
+                  2.5 bay hours/month
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="size-4 text-primary flex-shrink-0 mt-0.5" />
+                  14-day priority booking
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="size-4 text-primary flex-shrink-0 mt-0.5" />
+                  Month-to-month, no penalty
+                </li>
+              </ul>
+            </div>
+
+            <div className="border border-primary rounded-2xl p-6">
+              <h3 className="text-xl font-semibold text-foreground mb-1">Player</h3>
+              <p className="text-3xl font-bold text-foreground mb-3">$99<span className="text-base font-normal text-muted-foreground">/mo</span></p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <Check className="size-4 text-primary flex-shrink-0 mt-0.5" />
+                  4 bay hours/month
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="size-4 text-primary flex-shrink-0 mt-0.5" />
+                  14-day priority booking
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="size-4 text-primary flex-shrink-0 mt-0.5" />
+                  15% off additional hours
+                </li>
+              </ul>
+            </div>
+
             <div className="border border-primary rounded-2xl p-6">
               <h3 className="text-xl font-semibold text-foreground mb-1">Founding Member</h3>
               <p className="text-3xl font-bold text-foreground mb-3">$149<span className="text-base font-normal text-muted-foreground">/mo</span></p>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <Check className="size-4 text-primary flex-shrink-0 mt-0.5" />
-                  8 bay hours/month (peak or off-peak)
+                  8 bay hours/month
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="size-4 text-primary flex-shrink-0 mt-0.5" />
@@ -253,29 +291,6 @@ export default function GolfSimulatorPricesNJPage() {
                 <li className="flex items-start gap-2">
                   <Check className="size-4 text-primary flex-shrink-0 mt-0.5" />
                   15% off additional hours
-                </li>
-              </ul>
-            </div>
-
-            <div className="border border-primary rounded-2xl p-6">
-              <h3 className="text-xl font-semibold text-foreground mb-1">Player Membership</h3>
-              <p className="text-3xl font-bold text-foreground mb-3">$99<span className="text-base font-normal text-muted-foreground">/mo</span></p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <Check className="size-4 text-primary flex-shrink-0 mt-0.5" />
-                  4 bay hours/month (peak or off-peak)
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="size-4 text-primary flex-shrink-0 mt-0.5" />
-                  14-day priority booking
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="size-4 text-primary flex-shrink-0 mt-0.5" />
-                  15% off additional hours
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="size-4 text-primary flex-shrink-0 mt-0.5" />
-                  Month-to-month, cancel anytime
                 </li>
               </ul>
             </div>

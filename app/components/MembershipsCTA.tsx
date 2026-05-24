@@ -27,8 +27,8 @@ export function MembershipsCTA() {
               </h2>
               <p className="mt-3 text-muted-foreground">
                 Pay-by-the-hour still works the same. But if you're here every week,
-                a membership gets you bay hours, 15% off extra time, priority
-                booking, and 24/7 Pivotal Training Gym access.
+                memberships start at $45/mo with monthly bay hours, priority booking,
+                and perks like 24/7 Pivotal Training Gym access.
               </p>
             </div>
             <Link href="/memberships" className="shrink-0">

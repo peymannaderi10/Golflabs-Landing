@@ -8,7 +8,7 @@ const faqData = [
     id: 1,
     question: "Do I need a membership to play?",
     answer:
-      "No. Just pick a time, pay for your session, and show up. No membership required. If you play regularly, optional memberships are available from $99/mo with monthly bay hours and priority booking.",
+      "No. Just pick a time, pay for your session, and show up. No membership required. If you play regularly, optional memberships are available from $45/mo with monthly bay hours and priority booking.",
   },
   {
     id: 2,

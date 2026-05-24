@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!town) return {};
 
   const title = `Golf Simulator Near ${town.town} NJ | 24/7 No Membership Required | GolfLabs`;
-  const description = `Golf simulator ${town.driveTime} from ${town.town}, NJ. $25–$35/hr, open 24/7, no membership required. Uneekor EYE Mini launch monitor, GSPro with 2400+ courses. Optional memberships from $99/mo. Book online, unlock with your phone.`;
+  const description = `Golf simulator ${town.driveTime} from ${town.town}, NJ. $25–$35/hr, open 24/7, no membership required. Uneekor EYE Mini launch monitor, GSPro with 2400+ courses. Optional memberships from $45/mo. Book online, unlock with your phone.`;
 
   return {
     title,
@@ -58,7 +58,7 @@ const features = [
   {
     icon: Users,
     title: "No Membership Required",
-    description: "Pay per session — no monthly fees, no commitment. Optional memberships available from $99/mo for monthly hours and priority booking.",
+    description: "Pay per session — no monthly fees, no commitment. Optional memberships available from $45/mo for monthly hours and priority booking.",
   },
   {
     icon: Zap,
@@ -238,7 +238,7 @@ export default async function TownPage({ params }: PageProps) {
             <div className="border border-border">
               <div className="overflow-hidden bg-muted/20">
                 <img
-                  src="/images/practice.webp"
+                  src="/images/getting-started/gspro-practice.webp"
                   alt="GSPro practice mode showing shot data on the projector"
                   className="w-full aspect-video object-cover object-center"
                   loading="lazy"
@@ -259,7 +259,7 @@ export default async function TownPage({ params }: PageProps) {
             <div className="border border-border">
               <div className="overflow-hidden bg-muted/20">
                 <img
-                  src="/images/Play.png"
+                  src="/images/getting-started/gspro-play.webp"
                   alt="GSPro course simulation showing a golf hole on the projector"
                   className="w-full aspect-video object-cover object-center"
                   loading="lazy"
@@ -385,7 +385,7 @@ export default async function TownPage({ params }: PageProps) {
                 </h2>
                 <p className="mt-3 text-muted-foreground">
                   No membership required to book — but if you&apos;re a regular, memberships
-                  start at $99/mo with monthly bay hours, 15% off extra time, and priority booking.
+                  start at $45/mo with monthly bay hours and priority booking.
                 </p>
                 <ul className="mt-4 space-y-2">
                   {[
