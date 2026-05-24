@@ -38,6 +38,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
 
+    {
+      url: `${baseUrl}/memberships`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+
     // SEO content pages
     {
       url: `${baseUrl}/golf-simulator-prices-nj`,

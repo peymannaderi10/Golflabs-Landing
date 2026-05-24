@@ -13,7 +13,7 @@ const faqCategories = [
     items: [
       {
         q: "Do I need a membership to play?",
-        a: "No. There's no membership, no monthly fee, and no commitment. Just pick a time, pay for your session, and show up. That's it.",
+        a: "No. Just pick a time, pay for your session, and show up — no membership required. If you play regularly, optional memberships are available from $99/mo with monthly bay hours and priority booking.",
       },
       {
         q: "What's the minimum booking time?",
@@ -21,7 +21,7 @@ const faqCategories = [
       },
       {
         q: "How much does it cost?",
-        a: "Off-peak hours (2am–9am) are $25/hr. Peak hours (9am–2am) are $35/hr. 15-minute minimum booking. No membership fees, no hidden charges.",
+        a: "Off-peak hours (2am–9am) are $25/hr. Peak hours (9am–2am) are $35/hr. 15-minute minimum booking. No membership required, no hidden charges. Optional memberships from $99/mo include monthly bay hours and discounts.",
       },
       {
         q: "How do I pay?",
@@ -64,6 +64,23 @@ const faqCategories = [
       {
         q: "What simulator technology do you use?",
         a: "We use the Uneekor EYE Mini SimKit with GSPro simulation software. It tracks ball speed, launch angle, spin rate, carry distance, and more — solid data to help you improve.",
+      },
+    ],
+  },
+  {
+    label: "Memberships",
+    items: [
+      {
+        q: "Do you offer memberships?",
+        a: "Yes — optional memberships are available. The Player Membership is $99/mo (4 bay hours, 14-day priority booking) and the Founding Member is $149/mo (8 bay hours, 30-day priority booking, 24/7 Pivotal Training Gym access). No membership is required to book.",
+      },
+      {
+        q: "Can I change or cancel my membership?",
+        a: "Yes. You can switch plans or cancel any time from your dashboard. Cancellation can be at period end (keep access until then) or immediate with a prorated refund. Month-to-month, no penalty.",
+      },
+      {
+        q: "What's the difference between booking normally and having a membership?",
+        a: "Members get included monthly bay hours, 15% off additional hours, a longer priority booking window (14–30 days vs. 7 for the public), and rollover on unused hours. Non-members pay per session at the regular rate.",
       },
     ],
   },

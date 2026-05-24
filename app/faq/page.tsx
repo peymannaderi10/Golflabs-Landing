@@ -7,7 +7,7 @@ import { FAQPageContent } from "./FAQPageContent";
 export const metadata: Metadata = {
   title: "FAQ | GolfLabs Golf Simulator Southampton NJ — Pricing, Hours, Access",
   description:
-    "Answers about GolfLabs golf simulator: pricing ($25–$35/hr), 24/7 hours, smart lock access, BYOB policy, Uneekor technology, and booking. No membership required.",
+    "Answers about GolfLabs golf simulator: pricing ($25–$35/hr), 24/7 hours, smart lock access, BYOB policy, Uneekor technology, optional memberships from $99/mo, and booking. No membership required.",
   alternates: { canonical: "https://golflabs.us/faq" },
 };
 
@@ -34,7 +34,7 @@ export default function FAQPage() {
                 name: "Do I need a membership to play at GolfLabs?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "No. There's no membership, no monthly fee, and no commitment. Just pick a time, pay for your session, and show up.",
+                  text: "No membership required. Just pick a time, pay for your session, and show up. Optional memberships are available from $99/mo with monthly bay hours and priority booking.",
                 },
               },
               {
@@ -59,6 +59,14 @@ export default function FAQPage() {
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "No, and that's by design. Fully self-service means no staffing costs, which is how we keep prices at $25–35/hr instead of $60–75.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Does GolfLabs offer memberships?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes, optional memberships are available. The Player Membership is $99/mo (4 bay hours, priority booking) and the Founding Member is $149/mo (8 bay hours, 24/7 gym access, 30-day priority booking). No membership is required to book.",
                 },
               },
               {

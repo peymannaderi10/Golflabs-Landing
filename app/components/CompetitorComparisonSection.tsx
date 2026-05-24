@@ -5,7 +5,7 @@ import { Check, X } from "lucide-react";
 
 const rows = [
   { feature: "Hourly rate", us: "$25–$35/hr", them: "$60–75/hr" },
-  { feature: "Membership required", us: false, them: true },
+  { feature: "Membership required", us: "No (optional)", them: "Yes" },
   { feature: "Open 24/7 for everyone", us: true, them: false },
   { feature: "15-minute minimum", us: true, them: false },
   { feature: "Book online instantly", us: true, them: false },

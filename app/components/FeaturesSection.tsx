@@ -25,9 +25,9 @@ const features = [
   },
   {
     icon: <DollarSign className="size-5" />,
-    title: "No Membership",
+    title: "No Membership Required",
     description:
-      "Pay by the session. No monthly fees, no initiation costs, no commitments. Book 15 minutes or 4 hours.",
+      "Pay by the session — no monthly fees, no commitment. Optional memberships available from $99/mo for monthly hours and priority booking.",
   },
   {
     icon: <Users className="size-5" />,

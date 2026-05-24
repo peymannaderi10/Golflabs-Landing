@@ -168,10 +168,10 @@ export default async function Home() {
               },
               {
                 "@type": "Question",
-                name: "Does GolfLabs have a membership?",
+                name: "Does GolfLabs require a membership?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "No. GolfLabs has no membership, no monthly fees, and no commitment. Just book and play.",
+                  text: "No membership required. You can book and pay per session with no commitment. Optional memberships are available from $99/mo for monthly bay hours, priority booking, and 15% off additional time.",
                 },
               },
             ],

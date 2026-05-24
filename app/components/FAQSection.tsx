@@ -8,7 +8,7 @@ const faqData = [
     id: 1,
     question: "Do I need a membership to play?",
     answer:
-      "No. There's no membership, no monthly fee, and no commitment. Just pick a time, pay for your session, and show up. That's it.",
+      "No. Just pick a time, pay for your session, and show up. No membership required. If you play regularly, optional memberships are available from $99/mo with monthly bay hours and priority booking.",
   },
   {
     id: 2,

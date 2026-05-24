@@ -6,7 +6,7 @@ import { Navbar } from "@/app/components/Navbar";
 import { Footer } from "@/app/components/Footer";
 import { CTASection } from "@/app/components/CTASection";
 import { APP_URL } from "@/lib/config";
-import { MapPin, Clock3, DollarSign, Users, Zap, Phone, ArrowRight } from "lucide-react";
+import { MapPin, Clock3, DollarSign, Users, Zap, Phone, ArrowRight, Check } from "lucide-react";
 
 interface PageProps {
   params: Promise<{ townSlug: string }>;
@@ -21,14 +21,26 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const town = getTownBySlug(townSlug);
   if (!town) return {};
 
-  const title = `Golf Simulator Near ${town.town} NJ | 24/7 No Membership | GolfLabs`;
-  const description = `Looking for a golf simulator near ${town.town}, NJ? GolfLabs is ${town.driveTime} away. $25–$35/hr, 24/7 access, no membership. Uneekor EYE Mini with GSPro and 2400+ courses.`;
+  const title = `Golf Simulator Near ${town.town} NJ | 24/7 No Membership Required | GolfLabs`;
+  const description = `Golf simulator ${town.driveTime} from ${town.town}, NJ. $25–$35/hr, open 24/7, no membership required. Uneekor EYE Mini launch monitor, GSPro with 2400+ courses. Optional memberships from $99/mo. Book online, unlock with your phone.`;
 
   return {
     title,
     description,
     alternates: { canonical: `https://golflabs.us/${town.slug}` },
-    openGraph: { title, description, url: `https://golflabs.us/${town.slug}` },
+    openGraph: {
+      title,
+      description,
+      url: `https://golflabs.us/${town.slug}`,
+      images: [
+        {
+          url: "/images/bay1.jpg",
+          width: 1200,
+          height: 630,
+          alt: `Golf simulator near ${town.town}, NJ — GolfLabs`,
+        },
+      ],
+    },
   };
 }
 
@@ -45,13 +57,13 @@ const features = [
   },
   {
     icon: Users,
-    title: "No Membership",
-    description: "Pay per session. No monthly fees, no initiation costs, no commitment.",
+    title: "No Membership Required",
+    description: "Pay per session — no monthly fees, no commitment. Optional memberships available from $99/mo for monthly hours and priority booking.",
   },
   {
     icon: Zap,
     title: "15-Min Minimum",
-    description: "Book as little as 15 minutes. Quick warmup before work? That's $6.25–$8.75.",
+    description: "Book as little as 15 minutes. Quick warmup before work? That's $8.75 at peak.",
   },
 ];
 
@@ -66,12 +78,13 @@ export default async function TownPage({ params }: PageProps) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
+        "@type": ["LocalBusiness", "SportsActivityLocation"],
         "@id": "https://golflabs.us/#business",
         name: "GolfLabs",
-        description: `Golf simulator near ${town.town}, NJ. $25–$35/hr, 24/7 access, no membership required.`,
+        description: `Golf simulator ${town.driveTime} from ${town.town}, NJ. $25–$35/hr, open 24/7, no membership required. Uneekor EYE Mini with GSPro, 2400+ courses.`,
         url: `https://golflabs.us/${town.slug}`,
         telephone: "+18567451025",
+        image: "https://golflabs.us/images/bay1.jpg",
         address: {
           "@type": "PostalAddress",
           streetAddress: "133 Eayrestown Rd",
@@ -80,13 +93,46 @@ export default async function TownPage({ params }: PageProps) {
           postalCode: "08088",
           addressCountry: "US",
         },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 39.9526,
+          longitude: -74.7141,
+        },
         areaServed: { "@type": "City", name: `${town.town}, NJ` },
         priceRange: "$25-$35",
+        paymentAccepted: "Credit Card, Debit Card",
+        currenciesAccepted: "USD",
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          reviewCount: "11",
+          bestRating: "5",
+        },
         openingHoursSpecification: {
           "@type": "OpeningHoursSpecification",
           dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
           opens: "00:00",
           closes: "23:59",
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Golf Simulator Sessions",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              name: "Off-Peak",
+              price: "25",
+              priceCurrency: "USD",
+              description: "2am – 9am",
+            },
+            {
+              "@type": "Offer",
+              name: "Peak",
+              price: "35",
+              priceCurrency: "USD",
+              description: "9am – 2am",
+            },
+          ],
         },
       },
       {
@@ -130,10 +176,10 @@ export default async function TownPage({ params }: PageProps) {
                 <ArrowRight className="size-4" />
               </a>
               <Link
-                href="/faq"
+                href="/getting-started"
                 className="inline-flex items-center gap-2 rounded-md border border-border px-6 py-3 text-sm font-medium text-foreground hover:border-primary hover:text-primary transition-colors"
               >
-                View FAQ
+                How It Works
               </Link>
             </div>
           </div>
@@ -324,6 +370,48 @@ export default async function TownPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Memberships CTA */}
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-5xl px-6 sm:px-8">
+          <div className="relative overflow-hidden border border-primary rounded-2xl p-8 md:p-12">
+            <div
+              aria-hidden
+              className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-primary/10 blur-3xl"
+            />
+            <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div className="max-w-xl">
+                <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
+                  Play every week? Consider a membership.
+                </h2>
+                <p className="mt-3 text-muted-foreground">
+                  No membership required to book — but if you&apos;re a regular, memberships
+                  start at $99/mo with monthly bay hours, 15% off extra time, and priority booking.
+                </p>
+                <ul className="mt-4 space-y-2">
+                  {[
+                    "4–8 bay hours/month included",
+                    "15% off additional hours",
+                    "Priority booking window (up to 30 days ahead)",
+                    "Month-to-month, cancel anytime",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <Check className="size-4 text-primary flex-shrink-0 mt-0.5" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <Link href="/memberships" className="shrink-0">
+                <span className="inline-flex items-center gap-2 rounded-md border border-primary bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-transparent hover:text-primary transition-colors cursor-pointer">
+                  View Plans
+                  <ArrowRight className="size-4" />
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Nearby Towns */}
       {nearbyTowns.length > 0 && (
         <section className="py-16 md:py-24">
@@ -351,6 +439,9 @@ export default async function TownPage({ params }: PageProps) {
             <div className="mt-12 flex flex-wrap gap-6 text-sm">
               <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
                 Home
+              </Link>
+              <Link href="/memberships" className="text-muted-foreground hover:text-primary transition-colors">
+                Memberships
               </Link>
               <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
                 About
