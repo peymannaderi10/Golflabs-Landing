@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { AlertCircle, X } from "lucide-react";
+import { Info, X } from "lucide-react";
 
 const ARRIVAL_STEPS = [
   {
@@ -511,7 +511,7 @@ export function GettingStartedContent() {
                   </div>
 
                   <div className="flex gap-3 mt-4 p-4 bg-primary/5 border border-primary/20">
-                    <AlertCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <Info className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="font-medium text-foreground text-sm mb-1">
                         What to do
